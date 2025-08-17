@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga & Herbs Wellness</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="theme-color" content="#3a7d44">
+    <meta name="msapplication-navbutton-color" content="#3a7d44">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#3a7d44">
+</head>
+<body class="min-h-screen">
+    <!-- Login Modal -->
+    <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+        <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-xl w-full max-w-md">
+            <h2 class="text-2xl font-bold mb-6 text-center">Welcome Back</h2>
+            <form id="loginForm">
+                <div class="mb-4">
+                    <label class="block mb-2">Email</label>
+                    <input type="email" required class="w-full p-2 border rounded dark:bg-gray-700">
+                </div>
+                <div class="mb-6">
+                    <label class="block mb-2">Password</label>
+                    <input type="password" required class="w-full p-2 border rounded dark:bg-gray-700">
+                </div>
+                <button type="submit" class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 mb-4">
+                    Login
+                </button>
+                <button type="button" id="cancelBtn" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-md transition duration-300">
+                        Cancel
+                </button>
+                <p class="text-center">Don't have an account? <a href="#" class="text-green-600">Sign up</a></p>
+            </form>
+            <button onclick="closeLogin()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- vertical Sidebar -->
+     <button id="toggle-btn">☰ Menu</button>
+
+  <div id="sidebar">
+    <a href="#">1. Herbal Knowledge</a>
+    <a href="#">2. Yoga Knowledge</a>
+    <a href="#">3. Benefits</a>
+  </div>
+
+  <div class="main-content">
+    <h1 style="margin-left: 100px; text-align:left;">Welcome to the Wellness Portal</h1>
+    <p style="margin-left: 100px; text-align:left;">Select a category from the sidebar to learn more.</p>
+  </div>
+
+  <!--search bar-->
+  <div class="search-box">
+    <input type="text" placeholder="Search here...">
+    <button>Search</button>
+  </div>
+    
+
+    <!-- Main Content -->
+    <div id="main-content" class="transition-all duration-300">
+        <!-- Header -->
+        <header class="nav-bg shadow-lg">
+            <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+                <div class="flex items-center">
+                    <button onclick="toggleSidebar()" class="mr-4 text-white md:hidden">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <img src="https://i.pinimg.com/originals/48/32/99/483299930fc0bb532dd9297c4039ee39.png" width="50" height="50" alt="Lotus flower logo" class="mr-3">
+                    <h1 class="text-2xl font-bold">Yoga & Herbs</h1>
+                </div>
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-6">
+                        <li><button onclick="showPage('home')" class="nav-link active">Home</button></li>
+                        <li><button onclick="showPage('herbs')" class="nav-link">Herbs</button></li>
+                        <li><button onclick="showPage('shop')" class="nav-link">Shop</button></li>
+                        <li><button onclick="showPage('classes')" class="nav-link">Classes</button></li>
+                        <li><button onclick="showPage('quiz')" class="nav-link">Quiz</button></li>
+                    </ul>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <button id="loginBtn" onclick="openLogin()" class="px-4 py-2 rounded-lg bg-white text-green-600 hover:bg-gray-100">
+                        Login
+                    </button>
+                    <button id="userMenu" class="hidden items-center">
+                        <img src="https://placehold.co/40x40" alt="User avatar" class="rounded-full mr-2">
+                        <span id="username">User</span>
+                    </button>
+                    <button id="themeToggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700">
+                        <span id="themeIcon">☀️</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Live Background Wallpaper -->
+        <canvas id="wallpaperCanvas"></canvas>
+        <video autoplay muted loop id="backgroundVideo">
+        <source src="assets/videos/nature.mp4" type="video/mp4">
+       </video>
+
+
+        <!-- Main Content -->
+        <main class="container mx-auto px-4 py-8">
+            <!-- Home Page -->
+            <div id="home" class="page active">
+                <section class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4" style="margin-top: -50px;">Welcome to ZenHerbs</h2>
+                    <p class="text-xl mb-8">Discover the harmony of ancient yoga practices and herbal remedies for modern wellness.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
+                        <div class="card-bg p-6 rounded-lg shadow-lg">
+                            <img src="https://mobilephysiotherapyclinic.net/wp-content/uploads/2023/12/hatha-yoga-1.webp" alt="Hatha Yoga class" class="mb-4 rounded w-full h-40 object-cover">
+                            <h3 class="text-xl font-bold mb-2">Hatha Yoga</h3>
+                            <p class="text-sm"> <a href="https://youtu.be/ZadzTEO49lQ"> Gentle practice for all levels</a> </p>
+                        </div>
+                        <div class="card-bg p-6 rounded-lg shadow-lg">
+                            <img src="https://healthjade.com/wp-content/uploads/2018/07/ashwagandha.jpg" alt="Ashwagandha herb" class="mb-4 rounded w-full h-40 object-cover">
+                            <h3 class="text-xl font-bold mb-2">Ashwagandha</h3>
+                            <p class="text-sm">Stress-relieving herb</p>
+                        </div>
+                        <div class="card-bg p-6 rounded-lg shadow-lg">
+                            <img src="https://fthmb.tqn.com/zdGKApD6j7UdTo-KMN_t4aEEGtA=/5118x3416/filters:fill(87E3EF,1)/meditation-Compassionate-Eye-Foundation-Taxi-Getty-Images-56a906d13df78cf772a2f03b.jpg" alt="Meditation session" class="mb-4 rounded w-full h-40 object-cover">
+                            <h3 class="text-xl font-bold mb-2">Meditation</h3>
+                            <p class="text-sm">Daily mindfulness practice</p>
+                        </div>
+                        <div class="card-bg p-6 rounded-lg shadow-lg">
+                            <img src="https://tse4.mm.bing.net/th/id/OIP.WViPKZ9miiECefPqjv0mBQHaFA?pid=Api&P=0&h=180" alt="Turmeric powder" class="mb-4 rounded w-full h-40 object-cover">
+                            <h3 class="text-xl font-bold mb-2">Turmeric</h3>
+                            <p class="text-sm">Anti-inflammatory benefits</p>
+                        </div>
+                        <div class="card-bg p-6 rounded-lg shadow-lg">
+                            <img src="https://i.ytimg.com/vi/Iw487K9C5oA/maxresdefault.jpg" alt="Vinyasa flow" class="mb-4 rounded w-full h-40 object-cover">
+                            <h3 class="text-xl font-bold mb-2">Vinyasa</h3>
+                            <p class="text-sm">Dynamic movement with breath</p>
+                        </div>
+                        <div class="card-bg p-6 rounded-lg shadow-lg">
+                            <img src="https://www.organicfacts.net/wp-content/uploads/tulsitea-1.jpg" alt="Tulsi tea" class="mb-4 rounded w-full h-40 object-cover">
+                            <h3 class="text-xl font-bold mb-2">Tulsi Tea</h3>
+                            <p class="text-sm">Immunity boosting herbal tea</p>
+                        </div>
+                        </div>
+            </section>
+        </div>
+                    
+
+            <!--slidshow-->
+            <div class="slideshow">
+    <div class="slides">
+      <img src="https://cdn.shopify.com/s/files/1/0129/0321/9264/files/SensocreamBlog_Image_1_1024x1024.jpg?v=1642645578" alt="Image 1">
+      <img src="http://anherb.com/cdn/shop/articles/Web_1920_28.png?v=1669026133" alt="Image 2">
+      <img src="https://kandrafoods.com/wp-content/uploads/2022/10/Herbal-Products-4.jpg" alt="Image 3">
+      <img src="https://thomasprocessing.com/wp-content/uploads/2022/06/Herbal-medicine-Leaves-bottles-and-pills-1500x430.jpg" alt="Image 4">
+    </div>
+    </div>
+
+            <!-- Herbs Info Page -->
+            <div id="herbs" class="page">
+                <h3 style="position: relative; top:-80px; text-align: center;">🛒 ZenHerb Online Herbal Shop <br> Welcome to the ZenHerb Online Herbal Shop</h3>
+                <h2 class="text-3xl font-bold mb-8 text-center">Medicinal Herbs Guide</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6" id="herbsContainer">
+                    <!-- Herb Cards will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Shop Page -->
+            <div id="shop" class="page">
+                <h2 class="text-3xl font-bold mb-8 text-center"><br>
+                    <br>Herbal Shop</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6" id="shopContainer">
+                    <!-- Product Cards will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Classes Page -->
+            <div id="classes" class="page">
+                <h2 class="text-3xl font-bold mb-8 text-center">Online Yoga Classes</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6" id="classesContainer">
+                    <!-- Class Cards will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Quiz Page -->
+            <div id="quiz" class="page">
+                <h3 style="position: relative; top:-80px;">
+                    <br>
+                    <br>
+                    <br>
+                    <br>Discover which herbal remedies or yoga practices best suit your current mental, physical, and emotional needs. Based on your responses, we’ll suggest a personalized approach to improve your daily wellness — naturally. <br> Finding balance in today’s fast-paced world can feel overwhelming, but sometimes all it takes is a moment of reflection. The ZenHerb Wellness Quiz is designed to guide you toward a more natural, personalized path to well-being. Whether you're feeling physically drained, mentally scattered, or simply curious about how to improve your daily energy and mood, this short quiz offers insights based on your current state of mind and lifestyle. By answering a few mindful questions, you'll receive tailored suggestions—ranging from calming yoga practices to supportive herbal remedies—that align with your body’s needs and rhythm. It’s more than a quiz; it’s a starting point for your self-care journey, grounded in ancient wisdom and adapted for modern life. Take a breath, take the quiz, and let ZenHerb help you rediscover your natural balance.🌱<h3>
+                <div class="max-w-2xl mx-auto card-bg p-8 rounded-lg shadow-lg">
+                    <h2 class="text-3xl font-bold mb-6 text-center">Yoga & Herbs Wellness Quiz</h2>
+                    <div id="quizContainer">
+                        <!-- Quiz will be populated by JavaScript -->
+                    </div>
+                    <div id="quizResult" class="hidden text-center mt-8">
+                        <h3 class="text-2xl font-bold mb-4">Your Wellness Profile</h3>
+                        <p id="resultText" class="mb-6"></p>
+                        <button onclick="resetQuiz()" class="bg-blue-600 text-white px-6 py-2 rounded-lg">Take Again</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="nav-bg py-8">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                        <p><span class="font-semibold">Email:</span> zenherb09@gmail.com</p>
+                        <p><span class="font-semibold">Phone:</span> +91 9283957336</p>
+                        <p><span class="font-semibold">Address:</span> xyz place, Mumbai (india)</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                        <ul class="space-y-2">
+                            <li><button onclick="showPage('home')" class="hover:underline">Home</button></li>
+                            <li><button onclick="showPage('herbs')" class="hover:underline">Herbs Info</button></li>
+                            <li><button onclick="showPage('shop')" class="hover:underline">Herbal Shop</button></li>
+                            <li><button onclick="showPage('classes')" class="hover:underline">Yoga Classes</button></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Newsletter</h3>
+                        <p class="mb-2">Subscribe for wellness tips:</p>
+                        <div class="flex">
+                            <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg w-full text-gray-900">
+                            <button class="bg-blue-600 text-white px-4 py-2 rounded-r-lg">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-8 pt-6 border-t border-gray-700">
+                    <p>&copy; 2023 Yoga & Herbs Wellness. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
