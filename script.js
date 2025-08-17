@@ -247,16 +247,16 @@ function initShopPage() {
     const products = [
         { name: "Organic Ashwagandha Powder", price: "320 Rs/-", img: "https://rukminim1.flixcart.com/image/832/832/krtjgcw0/vitamin-supplement/d/o/y/90-organic-ashwagandha-root-powder-vegetarian-capsules-90-count-original-imag5j3p2gcfhyyj.jpeg?q=70" },
         { name: "Turmeric Capsules", price: "270 Rs/-", img: "https://cdn.shopify.com/s/files/1/1697/6259/products/5_2000x.jpg?v=1588829599" },
-        { name: "Tulsi Tea Bags", price: "$12.99", img: "https://m.media-amazon.com/images/I/71hIipj7CUL._SL1500_.jpg" },
-        { name: "Brahmi Oil", price: "$18.75", img: "https://www.sukritayurveda.com/wp-content/uploads/2018/02/Brahmi-oil-for-stress-and-anxiety.png" },
-        { name: "Neem Soap", price: "$8.99", img: "https://tse4.mm.bing.net/th/id/OIP.h4zYmCQ9n-cEanGOax5AtAHaIV?pid=Api&P=0&h=180" },
-        { name: "Aloe Vera Gel", price: "$14.25", img: "https://tse3.mm.bing.net/th/id/OIP.id8DryuUssDrMi2_AvgJngHaHa?pid=Api&P=0&h=180" },
-        { name: "Ginger Tea", price: "$9.99", img: "https://tse2.mm.bing.net/th/id/OIP.i9PVxmMbuaaZXP4BKbRs_gHaKH?pid=Api&P=0&h=180" },
-        { name: "Gotu Kola Extract", price: "$22.50", img: "https://tse1.mm.bing.net/th/id/OIP.vey4m-dHfGyJ-z65EuDJmwHaHa?pid=Api&P=0&h=180" },
-        { name: "Shatavari Powder", price: "$24.99", img: "https://tse4.mm.bing.net/th/id/OIP.Vgyc6zVopiRhnwfzG4QnLAHaHa?pid=Api&P=0&h=180" },
-        { name: "Amla Juice", price: "$16.75", img: "https://tse3.mm.bing.net/th/id/OIP.JrjQLXvTyr1tkaHmU9zGBAHaHa?pid=Api&P=0&h=180" },
-        { name: "Guduchi Capsules", price: "$21.99", img: "https://tse2.mm.bing.net/th/id/OIP.0vteE059FzFUxfdAkw29MgHaHa?pid=Api&P=0&h=180" },
-        { name: "Licorice Root", price: "$11.25", img: "https://tse1.mm.bing.net/th/id/OIP.hOOodBGPK-yKSPTq0m8zfQHaE8?pid=Api&P=0&h=180" }
+        { name: "Tulsi Tea Bags", price: "160 Rs/-", img: "https://m.media-amazon.com/images/I/71hIipj7CUL._SL1500_.jpg" },
+        { name: "Brahmi Oil", price: "410 Rs/-", img: "https://www.sukritayurveda.com/wp-content/uploads/2018/02/Brahmi-oil-for-stress-and-anxiety.png" },
+        { name: "Neem Soap", price: "90 Rs/-", img: "https://tse4.mm.bing.net/th/id/OIP.h4zYmCQ9n-cEanGOax5AtAHaIV?pid=Api&P=0&h=180" },
+        { name: "Aloe Vera Gel", price: "170 Rs/-", img: "https://tse3.mm.bing.net/th/id/OIP.id8DryuUssDrMi2_AvgJngHaHa?pid=Api&P=0&h=180" },
+        { name: "Ginger Tea", price: "120 Rs/-", img: "https://tse2.mm.bing.net/th/id/OIP.i9PVxmMbuaaZXP4BKbRs_gHaKH?pid=Api&P=0&h=180" },
+        { name: "Gotu Kola Extract", price: "365 Rs/-", img: "https://tse1.mm.bing.net/th/id/OIP.vey4m-dHfGyJ-z65EuDJmwHaHa?pid=Api&P=0&h=180" },
+        { name: "Shatavari Powder", price: "220 Rs/-", img: "https://tse4.mm.bing.net/th/id/OIP.Vgyc6zVopiRhnwfzG4QnLAHaHa?pid=Api&P=0&h=180" },
+        { name: "Amla Juice", price: "145 Rs/-", img: "https://tse3.mm.bing.net/th/id/OIP.JrjQLXvTyr1tkaHmU9zGBAHaHa?pid=Api&P=0&h=180" },
+        { name: "Guduchi Capsules", price: "360 Rs/-", img: "https://tse2.mm.bing.net/th/id/OIP.0vteE059FzFUxfdAkw29MgHaHa?pid=Api&P=0&h=180" },
+        { name: "Licorice Root", price: "190 Rs/-", img: "https://tse1.mm.bing.net/th/id/OIP.hOOodBGPK-yKSPTq0m8zfQHaE8?pid=Api&P=0&h=180" }
     ];
 
     const container = document.getElementById('shopContainer');
@@ -406,3 +406,4 @@ document.addEventListener('DOMContentLoaded', function() {
     initClassesPage();
     initQuizPage();
 });
+
