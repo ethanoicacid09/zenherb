@@ -1,0 +1,347 @@
+:root {
+  --primary-green: #040f06;
+  --dark-green: #1e6937;
+  --light-green: #e9f5ec;
+  --text-primary: #0c0c0c;
+  --nav-bg: #6dedcf;
+  --nav-text: #0d0808;
+  --card-bg: #ffffff;
+  --footer-bg: #3a7d44;
+  --input-bg: #f0fdf4;
+}
+
+.dark {
+  --primary-green: #2e8b57;
+  --dark-green: #14532d;
+  --light-green: #141414;
+  --text-primary: #f3f3f3;
+  --nav-bg: #304630;
+  --nav-text: #f3f3f3;
+  --card-bg: #304630;
+  --footer-bg: #304630;
+  --input-bg: #edebeb;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #e9f5ec; /* light greenish background */
+  color: rgb(7, 3, 3);
+}
+
+.dark body {
+  background: #1a1a1a;
+  color: #eee;
+}
+
+.card-bg {
+  background-color: #ffffff;
+}
+
+.nav-bg {
+  background-color: #3a7d44;
+  color: white;
+}
+
+
+p{
+    margin-left: 70px;
+}
+
+.nav-bg {
+    background: var(--nav-bg);
+    color: var(--nav-text);
+}
+
+.card-bg {
+    background: var(--card-bg);
+    border: 1px solid rgba(213, 223, 215, 0.2);
+}
+
+button, .btn {
+    background-color: var(--primary-green);
+    color: white;
+}
+
+button:hover, .btn:hover {
+    background-color: var(--light-green);
+}
+
+#wallpaperCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+.page {
+    display: none;
+    min-height: calc(100vh - 120px);
+}
+
+.page.active {
+    display: block;
+}
+
+.nav-link {
+    color: var(--nav-text);
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    font-weight: 600;
+}
+
+/* Card Styles */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(81, 103, 81, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 80, 0, 0.2);
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    margin-bottom: 1rem;
+    flex-grow: 1
+    color white;
+}
+
+
+/* Login Modal Styles */
+#loginModal {
+    backdrop-filter: blur(5px);
+}
+
+#toggle-btn {
+  position: fixed;
+  top: 20px;
+  left: 10px;
+  border: 2px solid black;
+  background-color:#0a0b0b;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 10%;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* Sidebar Styles */
+#toggle-btn:hover {
+  background-color: #050605;
+}
+#sidebar {
+  height: 100vh;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  background-color: #cdd7d6;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+}
+
+#sidebar a {
+  padding: 15px 20px;
+  display: block;
+  font-size: 18px;
+  color: #ecf0f1;
+  text-decoration: none;
+}
+
+#sidebar a:hover {
+  background-color: #a5bed6;
+}
+
+#sidebar.active {
+  left: 0;
+}
+
+.main-content {
+  padding: 20px;
+  margin-left: 0;
+  transition: margin-left 0.3s;
+}
+
+#sidebar.active ~ .main-content {
+  margin-left : 250px;
+}
+
+/* Slideshow Styles */
+.slideshow {
+      width: 100%px;   /* adjust width */
+      height: 300px;  /* adjust height */
+      overflow: hidden;
+      position: relative;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        margin-top: -80px; /* center the slideshow */
+    }
+
+    .slides {
+      display: flex;
+      flex-direction: column; /* 👈 vertical layout */
+      animation: slide 12s infinite linear;
+    }
+
+    .slides img {
+      width: 100%; /* full width */
+      height: 300px; /* same as slideshow height */
+      object-fit: cover;
+    }
+
+/* Search Bar Styles */
+.search-box {
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 25px;
+      padding: 5px 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+     align-items:center;
+     width:50%;
+     position:absolute;
+     top: 20px; 
+        right: 20px;
+     
+   }
+
+    .search-box input {
+      border: none;
+      outline: none;
+      padding: 5px 10px;
+      font-size: 16px;
+      border-radius: 15px;
+      width: 650px;
+      justify-content:space-between;
+    }
+
+    .search-box button {
+      background: #0a0d0a;
+      border: none;
+      color: white;
+      padding: 8px 15px;
+      margin-left: 10px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 16px;
+      
+      display: flex;
+    }
+
+    .search-box button:hover {
+      background: #b793f0;
+    }
+
+/* User Menu Styles */
+#userMenu {
+    transition: all 0.3s ease;
+}
+
+#userMenu:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Grid */
+@media (max-width: 640px) {
+    .grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 640px) and (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+    .grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1280px) and (max-width: 1536px) {
+    .grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1536px) {
+    .grid {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+}
+
+@keyframes slide {
+      0%   { transform: translateY(0); }
+      20%  { transform: translateY(0); }
+      25%  { transform: translateY(-300px); }
+      45%  { transform: translateY(-300px); }
+      50%  { transform: translateY(-600px); }
+      70%  { transform: translateY(-600px); }
+      75%  { transform: translateY(-900px); }
+      95%  { transform: translateY(-900px); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-1200px); } /* 👈 (image width * number of images / 2) */
+    }
+
+/* Footer Styles */
+.footer {
+    background-color: var(--nav-bg);
+    color: var(--nav-text);
+}
+
+.newsletter-input {
+    background-color: var(--light-green);
+    color: var(--text-primary);
+}
+
+/* Additional green-themed elements */
+
